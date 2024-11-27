@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In - Dancini Thay</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+  <header>
+    <div class="header-content">
+      <span class="language-selector">English (United States)</span>
+      <span class="register-link">
+        New to Dancini Thay? <a href="register.html">Register</a>
+      </span>
+    </div>
+  </header>
+ 
+  <main>
+    <div class="container">
+      <img src="images/images (1).png" alt="Logo" class="logo">
+      <h1>Welcome to Dancini Thay</h1>
+      <p>Start earning online</p>
+      
+      <form>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <a href="#" class="forgot-password">Forgot password?</a>
+        <br>
+        <button type="submit" class="sign-in-btn">Sign In</button>
+      </form>
+      
+      <p class="divider">OR</p>
+
+      <button class="social-btn google-btn">
+        <i class="fab fa-google"></i> Log in with Google
+      </button>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Paidwork</p>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.querySelector("form");
+      const signInButton = document.querySelector(".sign-in-btn");
+      
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        // Example: Check if both fields are filled
+        const email = form.querySelector("input[type='email']").value;
+        const password = form.querySelector("input[type='password']").value;
+
+        if (email && password) {
+          window.location.href = "Dashboard.html"; // Redirect to Dashboard page
+        } else {
+          alert("Please fill in both email and password.");
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="earn.css">
+
+</head>
+<body>
+  <div class="navbar">
+    <!-- Logo -->
+    <div class="logo">
+      <img src="images/images (1).png" alt="Logo Image" class="logo-img">
+      <span>Dancini Thay</span>
+    </div>
+    
+   
+    <!-- Icons Section -->
+    <div class="nav-icons">
+      <!-- Bell Icon --> 
+      <div class="bell">
+        <i class="fas fa-bell"></i>
+        <!-- Notification Badge -->
+        <span class="notification-badge">2</span>
+        <!-- Notification Popup -->
+        <div class="notification-popup">
+          <strong>Welcome!</strong> You have new notifications.
+        </div>
+      </div>
+   
+  
+      <!-- User Icon -->
+      <div class="user-dropdown">
+        <i class="fas fa-user"></i>
+        <!-- Dropdown Menu -->
+        <div class="dropdown-menu">
+          <a href="#">Profile</a>
+          <a href="#">Settings</a>
+          <a href="#">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Notifications Container -->
+<div id="notifications-container"></div>
+
+
+
+  <div class="dashboard">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      
+      <nav>
+        <ul>
+          <li><a href="dashboard.html" class="active"><i class="fas fa-house"></i>Dashboard</a></li>
+          <li><a href="earn.html"><i class="fas fa-coins"></i> Earn</a></li>
+          <li><a href="plan.html"><i class="fas fa-file-invoice-dollar"></i> Billings</a></li>
+          <li><a href="#"><i class="fas fa-trophy"></i>Achievements</a></li>
+          <li><a href="referal.html"><i class="fas fa-users"></i> Referral Program</a></li>
+          <li><a href="help.html"><i class="fas fa-circle-question"></i> Help</a></li>
+          <li><a href="login.html"><i class="fas fa-right-from-bracket"></i>Log Out</a></li>
+        </ul>
+      </nav>
+    </aside>
+    </aside>
+<div class="bodyes">
+  <!-- Main Content -->
+  <div class="main-content">
+    <div class="content-box">
+      <div class="header-text">
+        <h1>Choose the method of earning</h1>
+        <p>💰 1000 Points = $10</p>
+      </div>
+      <div class="box-container">
+        <div class="box">
+          <img src="images/tiktok.png"Play Games">
+          <h3>Play Games</h3>
+          <p>Earn points by playing exciting games.</p>
+          <button>Earn</button>
+        </div>
+        <div class="box">
+          <img src="images/facebook.png" alt="Play Games">
+          <h3>Play Games</h3>
+          <p>Earn points by playing exciting games.</p>
+          <button>Earn</button>
+        </div>
+        <div class="box">
+          <img src="images/adsetera.jpg">
+          <h3>Play Games</h3>
+          <p>Earn points by playing exciting games.</p>
+          <button>Earn</button>
+        </div>
+        <div class="box">
+          <img src="images/chellee.png" alt="Play Games">
+          <h3>Play Games</h3>
+          <p>Earn points by playing exciting games.</p>
+          <button>Earn</button>
+        </div>
+        <div class="box">
+          <img src="images/snapchat.jpg" alt="Play Games">
+          <h3>Play Games</h3>
+          <p>Earn points by playing exciting games.</p>
+          <button>Earn</button>
+        </div>
+        <div class="box">
+          <img src="images/tiktok.png" alt="Play Games">
+          <h3>Play Games</h3>
+          <p>Earn points by playing exciting games.</p>
+          <button>Earn</button>
+        </div>
+        <div class="box">
+          <img src="images/facebook.png" alt="Play Games">
+          <h3>Play Games</h3>
+          <p>Earn points by playing exciting games.</p>
+          <button>Earn</button>
+        </div>
+        <div class="box">
+          <img src="images/adsetera.jpg" alt="Play Games">
+          <h3>Play Games</h3>
+          <p>Earn points by playing exciting games.</p>
+          <button>Earn</button>
+        </div>
+        <div class="box">
+          <img src="images/chellee.png" alt="Play Games">
+          <h3>Play Games</h3>
+          <p>Earn points by playing exciting games.</p>
+          <button>Earn</button>
+        </div>
+        <div class="box">
+          <img src="images/snapchat.jpg" alt="Play Games">
+          <h3>Play Games</h3>
+          <p>Earn points by playing exciting games.</p>
+          <button>Earn</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script>
+    // Toggle notifications
+    document.querySelector('.bell').addEventListener('click', function () {
+      document.querySelector('.notification-popup').classList.toggle('active');
+    });
+
+    // Toggle dropdown menu
+    document.querySelector('.user-dropdown').addEventListener('click', function () {
+      document.querySelector('.user-dropdown .dropdown-menu').classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support Page</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+ <link rel="stylesheet" href="help.css">
+</head>
+
+<body>
+  <!-- Navigation Bar -->
+  <header class="header">
+    <!-- Logo -->
+    <div class="logo">
+      <img src="images/images (1).png" alt="Logo Image" class="logo-img">
+      <span>Dancini Thay</span>
+    </div>
+    
+    <nav class="nav">
+      <a href="Dashboard.html">Home</a>
+      <a href="#">Support</a>
+      <a href="#">Contact</a>
+      <a href="#">About</a>
+    </nav>
+    <div class="language-dropdown">
+      <button><a href="Dashboard.html">Go Back</a></button>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="texty" style="color:transparent">dhdhbr
+      <br><br><br>jjj <br><br>
+    </div>
+    <h1>Attachments to helpful links</h1>
+    <p>To help you navigate through the Paidwork page, below we’ve included all links to pages that can help you with the problem you want to solve.</p>
+    <div class="search-bar">
+      <input type="text" placeholder="Search...">
+      <button>🔍</button>
+    </div>
+
+    <div class="categories">
+      <div class="category">
+        <h3>Get started</h3>
+        <ul>
+          <li>Beginner’s guide</li>
+          <li>Basics and registration</li>
+          <li>Explanation of each page</li>
+          <li>Recommendations for use</li>
+        </ul>
+      </div>
+      <div class="category">
+        <h3>Account</h3>
+        <ul>
+          <li>Changes in settings</li>
+          <li>Privacy and security</li>
+          <li>Not unlocked functions</li>
+          <li>How to change a country</li>
+        </ul>
+      </div>
+      <div class="category">
+        <h3>Making money</h3>
+        <ul>
+          <li>How does earning work</li>
+          <li>Methods of earning</li>
+          <li>Referral program</li>
+          <li>Rates and salaries</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+ 
+    <!-- Form Section -->
+    <div class="form-section">
+      <h2>Submit Your Query</h2>
+      <form id="support-form">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Your Email" required>
+        <textarea id="message" placeholder="Describe your problem here..." required></textarea>
+        <button type="submit">Submit</button>
+      </form>
+      <div id="notification" class="hidden">Your request has been sent!</div>
+    </div>
+    
+    <!-- Go Back Button -->
+   
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h4>Learning and Support</h4>
+        <ul>
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">Contact us</a></li>
+          <li><a href="#">Sitemap</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="#">Why Paidwork?</a></li>
+          <li><a href="#">Methods of earning</a></li>
+          <li><a href="#">Referral program</a></li>
+          <li><a href="#">Cashback</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About us</a></li>
+          <li><a href="#">Commitments</a></li>
+          <li><a href="#">Ambassador program</a></li>
+          <li><a href="#">Jobs</a></li>
+          <li><a href="#">Media kit</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Policy</h4>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Cookies Policy</a></li>
+          <li><a href="#">Copyright</a></li>
+          <li><a href="#">Advertising Policies</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Paidwork. All Rights Reserved.</p>
+      <div class="social-icons">
+        <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.youtube.com" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+      
+    </div>
+  </footer>
+  
+
+  <script>
+    // script.js
+
+function handleSearch() {
+    const query = document.getElementById('search').value;
+    const resultDiv = document.getElementById('search-result');
+    
+    if (query.length > 0) {
+      resultDiv.style.display = 'block';
+      resultDiv.textContent = `Results for "${query}"`;
+    } else {
+      resultDiv.style.display = 'none';
+    }
+  }
+  
+  document.getElementById('support-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    document.getElementById('notification').classList.remove('hidden');
+  });
+  
+  function goBack() {
+    window.history.back();
+  }
+  
+  </script>
+</body>
+</html>

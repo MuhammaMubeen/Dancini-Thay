@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Referral Program</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="referal.css">
+</head>
+
+<body>
+    <div class="margin"></div>
+
+    <div class="navbar">
+        <!-- Logo -->
+        <div class="logo">
+          <img src="images/images (1).png" alt="Logo Image" class="logo-img">
+          <span>Dancini Thay</span>
+        </div>
+        
+      
+        
+       
+        <!-- Icons Section -->
+        <div class="nav-icons">
+          <!-- Bell Icon --> 
+          <div class="bell">
+            <i class="fas fa-bell"></i>
+            <!-- Notification Badge -->
+            <span class="notification-badge">2</span>
+            <!-- Notification Popup -->
+            <div class="notification-popup">
+              <strong>Welcome!</strong> You have new notifications.
+            </div>
+          </div>
+       
+      
+          <!-- User Icon -->
+          <div class="user-dropdown">
+            <i class="fas fa-user"></i>
+            <!-- Dropdown Menu -->
+            <div class="dropdown-menu">
+              <a href="#">Profile</a>
+              <a href="#">Settings</a>
+              <a href="#">Logout</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+  <!-- Sidebar -->
+   <div class="dashboard">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <!-- Top Menu -->
+      <nav>
+        <ul>
+          <li><a href="dashboard.html" class="active"><i class="fas fa-house"></i>Dashboard</a></li>
+          <li><a href="earn.html"><i class="fas fa-coins"></i> Earn</a></li>
+          <li><a href="plan.html"><i class="fas fa-file-invoice-dollar"></i> Billings</a></li>
+          <li><a href="#"><i class="fas fa-trophy"></i>Achievements</a></li>
+          <li><a href="referal.html"><i class="fas fa-users"></i> Referral Program</a></li>
+          <li><a href="help.html"><i class="fas fa-circle-question"></i> Help</a></li>
+          <li><a href="login.html"><i class="fas fa-right-from-bracket"></i>Log Out</a></li>
+        </ul>
+      </nav>
+
+    </aside>
+ 
+  
+  <!-- Main Content -->
+  <div class="main-content">
+    <header>
+      <h2>Get $10 for each person</h2>
+      <p>
+        Invite a friend or someone from the internet to earn money on Paidwork. 
+        If a person earns at least $10 and makes a withdrawal, you'll both get $10 for free. 
+        <a href="#">Read more</a>
+      </p>
+    </header>
+
+    <section class="referral-section">
+      <div class="referral-link-box">
+        <label for="referral-link">Your referral link <span style="margin-left: 10px;"></span></label>
+        <input type="text" id="referral-link" value="https://www.paidwork.com/?r=yourreferralcode" readonly>
+        <button class="copy-link">Copy link</button>
+      </div>
+      <div class="social-share">
+        <a href="#" class="social-icon facebook">Facebook</a>
+        <a href="#" class="social-icon whatsapp">WhatsApp</a>
+        <a href="#" class="social-icon twitter">X</a>
+        <a href="#" class="social-icon reddit">Reddit</a>
+        <a href="#" class="social-icon telegram">Telegram</a>
+      </div>
+    </section>
+
+    <section class="referral-code">
+        <h2>Enter Referral Code</h2>
+        <input
+          type="text"
+          id="referral-code-input"
+          placeholder="Enter referral code here"
+          class="referral-input"
+        />
+        <button class="save-code-btn">Enter</button>
+      </section>
+      
+      <!-- Display referral amount -->
+      <section class="referral-amount">
+        <h3>Referral Amount</h3>
+        <p id="referral-amount">$0</p>
+      </section>
+      
+      <!-- Notification Modal -->
+      <div id="notification-modal" class="modal hidden">
+        <div class="modal-content">
+          <p id="notification-message"></p>
+          <button id="close-modal">Close</button>
+        </div>
+      </div>
+      
+      
+  </div>
+</div>
+</div>
+  <script>
+     // JavaScript for Interactive Behavior
+      
+      // Toggle Notification Popup
+      const bellIcon = document.querySelector('.bell i');
+      const notificationPopup = document.querySelector('.notification-popup');
+    
+      bellIcon.addEventListener('click', () => {
+        notificationPopup.classList.toggle('active');
+      });
+    
+      // Toggle Dropdown Menu
+      const userIcon = document.querySelector('.user-dropdown i');
+      const dropdownMenu = document.querySelector('.dropdown-menu');
+    
+      userIcon.addEventListener('click', () => {
+        dropdownMenu.classList.toggle('active');
+      });
+    
+      // Close popups when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!bellIcon.contains(e.target) && !notificationPopup.contains(e.target)) {
+          notificationPopup.classList.remove('active');
+        }
+        if (!userIcon.contains(e.target) && !dropdownMenu.contains(e.target)) {
+          dropdownMenu.classList.remove('active');
+        }
+      });
+
+
+document.querySelector('.copy-link').addEventListener('click', function () {
+    const referralLink = document.getElementById('referral-link');
+    referralLink.select();
+    navigator.clipboard.writeText(referralLink.value).then(() => {
+      alert('Referral link copied to clipboard!');
+    });
+  });
+
+  
+  // Check and retrieve referral amount from localStorage
+let referralAmount = parseInt(localStorage.getItem("referralAmount")) || 0;
+
+// Display the initial referral amount
+document.getElementById("referral-amount").textContent = `$${referralAmount}`;
+
+// Event listener for saving the referral code
+document.querySelector('.save-code-btn').addEventListener('click', function () {
+  const referralCodeInput = document.getElementById('referral-code-input');
+  const referralCode = referralCodeInput.value.trim();
+
+  if (referralCode === '') {
+    alert('Please enter a referral code!');
+    return;
+  }
+
+  // Simulate referral code validation (always valid for demonstration)
+  const isValidCode = true;
+
+  if (isValidCode) {
+    // Increase referral amount
+    referralAmount += 10;
+
+    // Save the new referral amount in localStorage
+    localStorage.setItem("referralAmount", referralAmount);
+
+    // Update the referral amount display
+    document.getElementById('referral-amount').textContent = `$${referralAmount}`;
+
+    // Show success notification
+    const notificationModal = document.getElementById('notification-modal');
+    const notificationMessage = document.getElementById('notification-message');
+    notificationMessage.textContent =
+      'Congratulations! Referral code saved successfully and $10 reward has been added to your account.';
+    notificationModal.classList.remove('hidden');
+
+    // Clear the input field
+    referralCodeInput.value = '';
+  } else {
+    alert('Invalid referral code. Please try again.');
+  }
+});
+
+// Event listener for closing the modal
+document.getElementById('close-modal').addEventListener('click', function () {
+  const notificationModal = document.getElementById('notification-modal');
+  notificationModal.classList.add('hidden');
+});
+
+  </script>
+</body>
+</html>

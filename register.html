@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In - Dancini Thay</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="register.css">
+
+</head>
+
+<body>
+  <header>
+    <div class="header-content">
+      <span class="language-selector">English (United States)</span>
+      <span class="register-link">
+        New to Dancini Thay? <a href="login.css">Sign In</a>
+      </span>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <img src="images/images (1).png" alt="Logo" class="logo">
+      <h1>Welcome to Dancini Thay</h1>
+      <p>Start earning online</p>
+      
+      <form>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+       
+          <input type="text" placeholder="First name" required>
+          <input type="text" placeholder="Last name" required>
+          <div class="gender">
+            <label><input type="radio" name="gender" value="female" required> Female</label>
+            <label><input type="radio" name="gender" value="male" required> Male</label>
+          </div>
+          <br><br>
+          <button type="submit" class="sign-in-btn"><a href="login.html">Register</a></button>
+       
+        </form>
+      
+      <p class="divider">OR</p>
+
+      <button class="social-btn google-btn">
+        <i class="fab fa-google"></i> Register in with Google</button>
+      
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2024</p>
+  </footer>
+  <script>
+  // Wait for the DOM to load
+document.addEventListener("DOMContentLoaded", function () {
+  // Select the form and the button
+  const form = document.querySelector("form");
+  const emailInput = document.querySelector("input[type='email']");
+  const passwordInput = document.querySelector("input[type='password']");
+  const signInButton = document.querySelector(".sign-in-btn");
+
+  // Add a click event listener to the button
+  signInButton.addEventListener("click", function (event) {
+    event.preventDefault(); // Prevent the default form submission behavior
+
+    // Check if the email and password fields are filled
+    if (emailInput.value.trim() === "" || passwordInput.value.trim() === "") {
+      alert("Please fill in both the email and password fields.");
+    } else {
+      // Redirect to registersecond.html
+      window.location.href = "login.html";
+    }
+  });
+});
+</script>
+</body>
+</html>
